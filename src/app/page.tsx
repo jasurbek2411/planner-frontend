@@ -1,6 +1,4 @@
-
 export default function Home() {
-  
   return (
     <>
       <input type="checkbox" name="" id="" className="checkbox" />
