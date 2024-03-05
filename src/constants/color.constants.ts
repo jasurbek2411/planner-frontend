@@ -4,4 +4,5 @@ export const COLORS = {
   border: "rgba(255, 255, 255, .12)",
   sidebar: "#141515",
   bg: "#0e0f0f",
+  light: "#fff",
 };

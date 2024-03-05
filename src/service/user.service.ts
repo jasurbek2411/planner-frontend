@@ -3,7 +3,7 @@ import { IUser, TypeUserForm } from "@/types/user.types";
 
 export interface IProfileResponse {
   user: IUser;
-  statics: {
+  statistics: {
     label: string;
     value: string;
   }[];

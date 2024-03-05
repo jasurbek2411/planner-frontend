@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
-import "./globals.scss";
-import Providers from "@/providers";
 import { Toaster } from 'sonner'
+import Providers from "@/providers";
+import "./globals.scss";
 
 const noto = Noto_Sans({
   subsets: ['cyrillic', 'latin'],
@@ -24,9 +24,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en">
-      <body className={noto.className}>
+      <body className={`${noto.className} text-light`}>
         <Providers>
           {children}
           <Toaster theme="dark" position="bottom-right" duration={1500} />
