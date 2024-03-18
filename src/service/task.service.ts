@@ -10,7 +10,7 @@ class TaskService {
   }
 
   async createTask(data: TypeTaskFormState) {
-    const response = await axiosWithAuth.post<ITaskResponse>(this.BASE_URL);
+    const response = await axiosWithAuth.post<ITaskResponse>(this.BASE_URL, data);
     return response;
   }
 
@@ -20,7 +20,7 @@ class TaskService {
   }
 
   async deleteTask(id: string) {
-    const response = await axiosWithAuth.delete(this.BASE_URL + `${id}`);
+    const response = await axiosWithAuth.delete(this.BASE_URL + `/${id}`);
     return response;
   }
 }

@@ -2,10 +2,10 @@ import { ITaskResponse } from "@/types/task.types"
 import { Draggable, Droppable } from "@hello-pangea/dnd"
 import { Dispatch, SetStateAction } from "react"
 import styles from './ListView.module.scss'
-import ListRow from "./ListRow"
+import ListRow from "./KanbanRow"
 import { FILTERS } from "../columns.data"
 import { filterTasks } from "../filter-tasks"
-import ListAddRowInput from "./ListAddRowInput"
+import ListAddRowInput from "./KanbanAddRowInput"
 
 
 interface IListRowParent {
