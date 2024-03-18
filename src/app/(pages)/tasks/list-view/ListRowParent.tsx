@@ -18,7 +18,7 @@ interface IListRowParent {
 
 const ListRowParent = ({ items, label, setItems, value }: IListRowParent) => {
   
-    return (
+    return (    
         <Droppable droppableId={value} >
             {
 
@@ -36,7 +36,7 @@ const ListRowParent = ({ items, label, setItems, value }: IListRowParent) => {
                                     {
                                         provided => (
                                             <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} >
-                                                <ListRow item={item} setItems={setItems} />
+                                                <ListRow key={item.id} item={item} setItems={setItems} />
                                             </div>
                                         )
                                     }
