@@ -3,6 +3,6 @@ export const QUERY_KEYS = {
   PROFILE: "profile",
   TASKS: "tasks",
   UPDATE_TASK: "update-task",
-  CREATE_TASK:"create-task"
-  DELETE_TASK :"delete-task"
+  CREATE_TASK: "create-task",
+  DELETE_TASK: "delete-task"
 };

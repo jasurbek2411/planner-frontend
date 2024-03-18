@@ -15,7 +15,7 @@ export const FILTERS: Record<string, Dayjs> = {
   later: dayjs().add(2, "week").startOf("day"),
 };
 
-export const COLUMN = [
+export const COLUMNS = [
   {
     label: "Today",
     id: "today",
@@ -30,7 +30,7 @@ export const COLUMN = [
   },
   {
     label: "On next week",
-    id: "on-this-week",
+    id: "on-next-week",
   },
   {
     label: "Later",

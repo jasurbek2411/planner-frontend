@@ -17,7 +17,7 @@ export function useTasks() {
   }, [data?.data]);
 
   return {
-    data,
+    items,
     isLoading,
     setItems,
   };
