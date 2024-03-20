@@ -31,7 +31,7 @@ const ListRow = ({ item, setItems }: IListRow) => {
     }
   })
 
-  useTaskDebounce({ watch, itemId: item.id })
+  useTaskDebounce({ watch, itemId: item?.id })
 
   return (
     <div className={
