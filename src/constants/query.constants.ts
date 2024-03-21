@@ -4,5 +4,9 @@ export const QUERY_KEYS = {
   TASKS: "tasks",
   UPDATE_TASK: "update-task",
   CREATE_TASK: "create-task",
-  DELETE_TASK: "delete-task"
+  DELETE_TASK: "delete-task",
+  UPDATE_ROUNDS: 'update-rounds',
+  GET_TODAY_SESSION: 'get-today-session',
+  CREATE_SESSION: 'create-session',
+  DELETE_SESSON: 'delete-session'
 };
