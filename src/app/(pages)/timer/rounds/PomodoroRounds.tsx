@@ -11,7 +11,7 @@ interface IPomodoroRounds {
 }
 
 
-const PomodorRounds = ({ activeRound, nextRoundHandler, prevRoundHandler, rounds }: IPomodoroRounds) => {
+const PomodoroRounds = ({ activeRound, nextRoundHandler, prevRoundHandler, rounds }: IPomodoroRounds) => {
 
     const isCanPrevRound = rounds ? rounds.some(round => round.isCompleted) : false
     const isCanNextRound = rounds ? !rounds[rounds.length - 1].isCompleted : false
@@ -35,4 +35,4 @@ const PomodorRounds = ({ activeRound, nextRoundHandler, prevRoundHandler, rounds
     )
 }
 
-export default PomodorRounds
+export default PomodoroRounds

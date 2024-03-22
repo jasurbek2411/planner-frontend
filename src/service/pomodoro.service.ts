@@ -14,7 +14,7 @@ class PomodoroSession {
   }
 
   async createSession() {
-    const response = await axiosWithAuth.get<IPomodoroSessionResponse>(this.BASE_URL);
+    const response = await axiosWithAuth.post<IPomodoroSessionResponse>(this.BASE_URL);
     return response;
   }
 

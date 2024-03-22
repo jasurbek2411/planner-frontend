@@ -1,20 +1,16 @@
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { useEffect } from "react";
 import { QUERY_KEYS } from "@/constants/query.constants";
 import { pomodoroSession } from "@/service/pomodoro.service";
 import { useQuery } from "@tanstack/react-query";
-import { IPomodoroSessionResponse } from "@/types/pomodoro.types";
 import { useLoadSettings } from "./useLoadSettings";
-
-interface IUseTodaySession {
-    setActiveRound: Dispatch<SetStateAction<IPomodoroSessionResponse | undefined>>
-    setSecondsLeft: Dispatch<SetStateAction<number>>
-    workInterval: number
-}
+import { ITimerState } from "../timer.types";
 
 
-export function useTodaySession({ setActiveRound, setSecondsLeft, workInterval }: IUseTodaySession) {
+export function useTodaySession({ setActiveRound, setSecondsLeft }: ITimerState) {
 
-    const { data: sessionResponse, isLoading, refetch, isSuccess } = useQuery({
+    const { workInterval } = useLoadSettings()
+
+    const { data: sessionResponse, isLoading, isSuccess } = useQuery({
         queryKey: [QUERY_KEYS.GET_TODAY_SESSION],
         queryFn: () => pomodoroSession.getTodaySession()
     })
@@ -27,11 +23,11 @@ export function useTodaySession({ setActiveRound, setSecondsLeft, workInterval }
             setActiveRound(activeRound)
 
             if (activeRound && activeRound.totalSeconds !== 0) {
-                setSecondsLeft(workInterval - activeRound.totalSeconds)
+                setSecondsLeft(activeRound.totalSeconds)
             }
         }
 
     }, [isSuccess, rounds])
 
-    return { sessionResponse, isLoading, refetch, isSuccess }
+    return { sessionResponse, isLoading, workInterval }
 }
