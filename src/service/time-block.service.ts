@@ -18,17 +18,17 @@ class TimeBlockService {
   }
 
   async updateTimeBlock(id: string, data: TypeTimeBlockForm) {
-    const response = await axiosWithAuth.put<ITimeBlockRespnose>(this.BASE_URL + `${id}`, data);
+    const response = await axiosWithAuth.put<ITimeBlockRespnose>(this.BASE_URL + `/${id}`, data);
     return response;
   }
 
   async deleteTimeBlock(id: string) {
-    const response = await axiosWithAuth.delete(this.BASE_URL + `${id}`);
+    const response = await axiosWithAuth.delete(this.BASE_URL + `/${id}`);
     return response;
   }
 
   async updateOrderTimeBlock(ids: string[]) {
-    const response = await axiosWithAuth.put(this.BASE_URL + "update-order", ids);
+    const response = await axiosWithAuth.put(this.BASE_URL + "/update-order", { ids });
     return response;
   }
 }
